@@ -11,9 +11,10 @@ using System;
 namespace AjadiForum.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201017223541_Initial Migration")]
+    partial class InitialMigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -246,7 +247,7 @@ namespace AjadiForum.Data.Migrations
             modelBuilder.Entity("AjadiForum.Models.Post", b =>
                 {
                     b.HasOne("AjadiForum.Models.Forum", "Forum")
-                        .WithMany("Posts")
+                        .WithMany()
                         .HasForeignKey("ForumId");
 
                     b.HasOne("AjadiForum.Models.ApplicationUser", "User")

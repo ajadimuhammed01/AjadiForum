@@ -1,0 +1,12 @@
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\bin\Debug\netcoreapp2.0\AjadiForum.deps.json
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\bin\Debug\netcoreapp2.0\AjadiForum.runtimeconfig.json
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\bin\Debug\netcoreapp2.0\AjadiForum.runtimeconfig.dev.json
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\bin\Debug\netcoreapp2.0\AjadiForum.dll
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\bin\Debug\netcoreapp2.0\AjadiForum.pdb
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.csprojAssemblyReference.cache
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.csproj.CoreCompileInputs.cache
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.AssemblyInfoInputs.cache
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.AssemblyInfo.cs
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.dll
+C:\Users\AJADI-PC\source\repos\AjadiForum\AjadiForum\obj\Debug\netcoreapp2.0\AjadiForum.pdb

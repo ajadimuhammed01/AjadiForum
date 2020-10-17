@@ -5,6 +5,11 @@
     <UserSecretsId>aspnet-AjadiForum-C70AF572-B65C-4048-A758-3325672DE4AF</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20201017225659_Third Migration.cs" />
+    <Compile Remove="Data\Migrations\20201017225659_Third Migration.Designer.cs" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
