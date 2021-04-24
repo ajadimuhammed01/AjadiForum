@@ -5,33 +5,52 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AjadiForum.Models;
+using AjadiForum.Data;
+using AjadiForum.Models.ViewModels;
 
 namespace AjadiForum.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IPost _postService;
+
+        public HomeController(IPost postService)
+        {
+            _postService = postService;
+        }
+
         public IActionResult Index()
         {
-            return View();
+            var model = BuildHomeIndexModel();
+            return View(model);
         }
 
-        public IActionResult About()
+        private HomeIndexModel BuildHomeIndexModel()
         {
-            ViewData["Message"] = "Your application description page.";
+            var latest = _postService.GetLatestPosts(10);
 
-            return View();
+            var posts = latest.Select(post => new PostListingModel
+            {
+                Id = post.Id,
+                Title = post.Title,
+                AuthorName = post.User.UserName,
+                AuthorId = post.User.Id,
+                AuthorRating = post.User.Rating,
+                DatePosted = post.Created.ToString(),
+                ForumName = post.Forum.Title,
+                Content = post.Content,
+               // ForumImageUrl = _postService.GetForumImageUrl(post.Id),
+                ForumImageUrl = post.Forum.ImageUrl,
+                ForumId = post.Forum.Id
+            });
+
+            return new HomeIndexModel()
+            {
+                LatestPosts = posts
+            };
         }
 
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
-            return View();
-        }
-
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
+        
+       
     }
 }

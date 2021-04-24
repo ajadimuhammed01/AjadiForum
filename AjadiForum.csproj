@@ -23,4 +23,17 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\Forum\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\fonts\icofont.svg" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Bold.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Light.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Medium.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Regular.woff2" />
+    <None Include="wwwroot\fonts\roboto\Roboto-Thin.woff2" />
+  </ItemGroup>
+
 </Project>

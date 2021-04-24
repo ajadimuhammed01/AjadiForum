@@ -1,5 +1,6 @@
 ﻿using AjadiForum.Data;
 using AjadiForum.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,17 +34,50 @@ namespace AjadiForum.Services
 
         public IEnumerable<Post> GetAll()
         {
-            throw new NotImplementedException();
+            return _context.Posts
+                .Include(post => post.User)
+                .Include(post => post.Replies).ThenInclude(reply => reply.User)
+                .Include(post => post.Forum);
+
         }
 
         public Post GetById(int id)
         {
-            throw new NotImplementedException();
+            return _context.Posts.Where(post => post.Id == id)
+                .Include(post => post.User)
+                .Include(post => post.Replies)
+                      .ThenInclude(reply => reply.User)
+                .Include(post => post.Forum)
+                .First();
+        }
+
+        public IEnumerable<Post> GetFilteredPosts(Forum forum, string searchQuery)
+        {
+
+            return string.IsNullOrEmpty(searchQuery) 
+                ? forum.Posts 
+                : /*otherwise*/ forum.Posts
+                .Where(post => post.Title.Contains(searchQuery) 
+                || post.Content.Contains(searchQuery));
         }
 
         public IEnumerable<Post> GetFilteredPosts(string searchQuery)
         {
-            throw new NotImplementedException();
+            return GetAll().Where(post
+                => post.Title.Contains(searchQuery)
+                 || post.Content.Contains(searchQuery));
+        }
+
+        public string GetForumImageUrl(int id)
+        {
+            var post = GetById(id);
+            return post.Forum.ImageUrl;
+        }
+
+        public IEnumerable<Post> GetLatestPosts(int count)
+        {
+            var allPosts = GetAll().OrderByDescending(post => post.Created);
+            return allPosts.Take(count);
         }
 
         public IEnumerable<Post> GetPostsByForum(int id)
