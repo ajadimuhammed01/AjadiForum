@@ -1,0 +1,22 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model AjadiForum.Models.ViewModels.ProfileModel
+
+@inject UserManager<AjadiForum.Models.ApplicationUser> UserManager
+
+<div class="container body-content">
+      <div class="row sectionHeader">
+          <div class="sectionHeading">
+               User Profile
+          </div>
+      </div>
+    <div class="row userProfile">
+        <div class="col-md-4">
+             <div id="userProfileImage" style="background-image: url(@Model.ProfileImageUrl)"></div>
+            @if (User.Identity.Name == Model.UserName)
+            {
+                <form method="post" enctype="multipart/form-data"
+
+            }
+        </div>
+    </div>
+</div>

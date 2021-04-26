@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace AjadiForum.Data
 {
-    interface IUpload
+    public interface IUpload
     {
     }
 }
